@@ -1,0 +1,96 @@
+/* CSS Document */
+*{
+	padding:0px;
+	margin:0px;
+}
+body{
+	background:url(../images/lodding-bg.gif) repeat-x;
+	background-size:cover;
+}
+.header{
+	width:700px;
+	height:100px;
+	background: url(../images/head-wold.png) no-repeat;
+	position:absolute;
+	
+	left:25%
+}
+/*---------------------------------centent----------------------------------------------*/
+.centent{
+	width:500px;
+	height:300px;
+	background:#1e7dee;
+	position:absolute;
+
+	left:30%;
+	box-shadow:0px 0px 10px #1e7dee;
+	border-radius:20px;
+}
+.centent-loginbar{
+	width:480px;
+	height:280px;
+	margin:10px;
+	background:#FFFFFF;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+	filter:Alpha(opacity=70);-moz-opacity:0.7;opacity:0.7;
+ 	border-radius:50px/0px  50px;
+	
+}
+.centent-loginbar h2{
+	padding-left:50px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.centent-loginbar p{
+	 font-size:14px; 
+	 color:#666; 
+
+}
+.centent-loginbar .txt{ 
+	font-size:16px; 
+	padding:20px 0px 0px 	50px;
+} 
+.centent-loginbar  .txt input{ 
+	width:263px; 
+	height:40px; 
+	border:1px solid #33CCFF; 
+	box-shadow:0px 0px 5px #000; 
+	border-radius:3px; 
+	margin-left:10px;
+	padding-left:20px;
+}
+
+
+.centent-loginbar  .but{
+	padding-left:60px;
+}
+.centent-loginbar .but input{
+	 width:60px; 
+	 height:40px; 
+	 background: #00CC66; 
+	 border:none; 
+	 border-radius:5px; 
+	 box-shadow:0px 0px 5px #000; 
+	 margin-left:70px;
+	 margin-top:20px;
+	 margin-right:20px;
+	 color:#FFFFFF;
+	 font-size:20px;
+	 cursor:pointer;
+}
+.centent-loginbar .but input:nth-of-type(2){
+	background:#999999;
+}
+
+
+/*---------------------------------fotter----------------------------------------------*/
+
+.footer{
+	position:absolute;
+	
+	left:30%
+}
+.footer p{
+	color:#FFFFFF;
+	text-align:center;
+}

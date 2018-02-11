@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.action.extension" value=","></constant>
+	<constant name="struts.multipart.maxSize" value="21474836480" />
+	<constant name="struts.multipart.saveDir" value="F:\\temp\netedu"></constant>
+
+	<package name="updown" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="updowninterceptor"
+				class="com.bigdata.action.interceptor.UpDownInterceptor"></interceptor>
+
+			<interceptor-stack name="updowninterceptorstack">
+				<interceptor-ref name="defaultStack">
+					<param name="fileUpload.maximumSize">21474836480</param>
+				</interceptor-ref>
+			</interceptor-stack>
+
+		</interceptors>
+
+		<default-interceptor-ref name="updowninterceptorstack"></default-interceptor-ref>
+
+		<action name="up" class="com.bigdata.action.updownaction.UploadAction">
+			<result name="login">/WEB-PAGE/upload/upload.jsp</result>
+			<result type="redirectAction">up_ok</result>
+			<result name="input">/WEB-PAGE/upload/up_error.jsp</result>
+		</action>
+		<action name="up_ok" class="com.bigdata.action.updownaction.UploadOk">
+			<result>/WEB-PAGE/upload/up_success.jsp</result>
+		</action>
+		<action name="filedownload" class="com.bigdata.action.updownaction.DownloadAction">
+			<result type="stream">
+				<param name="bufferSize">2048</param>
+				<param name="inputName">fileInput</param>
+				<param name="contentDisposition">attachment;filename="${fileName }"</param>
+			</result>
+		</action>
+	</package>
+	<package name="default" namespace="/" extends="updown">
+		<interceptors>
+			<interceptor name="logininterceptor"
+				class="com.bigdata.action.interceptor.LoginInterceptor" />
+			<interceptor-stack name="logininterceptorStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="logininterceptor" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="logininterceptorStack" />
+		<global-results>
+			<!-- 下面定义的结果对所有的Action都有效 -->
+			<result name="login">/WEB-PAGE/home/index.jsp</result>
+			<result name="login">/WEB-PAGE/subscriber/login.jsp</result>
+		</global-results>
+		<action name="index" class="com.bigdata.action.home.Index">
+			<result>/WEB-PAGE/home/index.jsp</result>
+		</action>
+		<!-- 搜索 -->
+		<action name="search" class="com.bigdata.action.search.Search">
+			<result>/WEB-PAGE/search/search.jsp</result>
+		</action>
+		<!-- 删除 -->
+		<action name="filedelete" class="com.bigdata.action.delete.Delete">
+			<result type="chain" name="success">
+				<param name="actionName">${returnresult}</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<action name="removemem" class="com.bigdata.action.delete.Remove">
+			<result type="chain" name="success">
+				<param name="actionName">member</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+		<!-- 登陆与注册 和退出和人员管理 -->
+		<action name="login" class="com.bigdata.action.subscriber.Login">
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="logininterceptor">
+				<param name="excludeMethods">execute</param>
+			</interceptor-ref>
+			<result>/WEB-PAGE/home/index.jsp</result>
+			<result name="login">/WEB-PAGE/subscriber/login.jsp</result>
+		</action>
+		<action name="register" class="com.bigdata.action.subscriber.Register">
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="logininterceptor">
+				<param name="excludeMethods">execute</param>
+			</interceptor-ref>
+			<result name="login">/WEB-PAGE/subscriber/register.jsp</result>
+			<result>/WEB-PAGE/home/index.jsp</result>
+		</action>
+		<action name="leave" class="com.bigdata.action.subscriber.Leave">
+			<result>/WEB-PAGE/subscriber/login.jsp</result>
+		</action>
+		<action name="member" class="com.bigdata.action.subscriber.Subscriber">
+			<result>/WEB-PAGE/subscriber/member.jsp</result>
+		</action>
+		<!-- 新闻 -->
+		<action name="otherNews" class="com.bigdata.action.news.MoreNews">
+			<result>/WEB-PAGE/news/news</result>
+		</action>
+		<!-- 计算机基础 -->
+		<action name="mdt"
+			class="com.bigdata.action.computerbase.MeetingDrawingTools">
+			<result>/WEB-PAGE/computerbase/meeting_drawing_tools.jsp</result>
+		</action>
+		<action name="office" class="com.bigdata.action.computerbase.Office">
+			<result>/WEB-PAGE/computerbase/office.jsp</result>
+		</action>
+		<action name="os" class="com.bigdata.action.computerbase.OperatingSystem">
+			<result>/WEB-PAGE/computerbase/operating_system.jsp</result>
+		</action>
+		<action name="pl" class="com.bigdata.action.computerbase.ProgramLanguage">
+			<result>/WEB-PAGE/computerbase/program_language.jsp</result>
+		</action>
+		<!-- 数据分析基础 -->
+		<action name="daa"
+			class="com.bigdata.action.dataanalysisbase.DataAnalysisAlgorithms">
+			<result>/WEB-PAGE/dataanalysisbase/data_analysis_algorithms.jsp
+			</result>
+		</action>
+		<action name="dam"
+			class="com.bigdata.action.dataanalysisbase.DataAnalysisModel">
+			<result>/WEB-PAGE/dataanalysisbase/data_analysis_model.jsp</result>
+		</action>
+		<action name="dat"
+			class="com.bigdata.action.dataanalysisbase.DataAnalysisTools">
+			<result>/WEB-PAGE/dataanalysisbase/data_analysis_tools.jsp</result>
+		</action>
+		<action name="dv"
+			class="com.bigdata.action.dataanalysisbase.DataVisualization">
+			<result>/WEB-PAGE/dataanalysisbase/data_visualization.jsp</result>
+		</action>
+		<action name="msd"
+			class="com.bigdata.action.dataanalysisbase.MultiSourceData">
+			<result>/WEB-PAGE/dataanalysisbase/multi_source_data.jsp</result>
+		</action>
+		<!-- 数据库 -->
+		<action name="nrd"
+			class="com.bigdata.action.database.NonRelationalDatabase">
+			<result>/WEB-PAGE/database/non_relational_database.jsp</result>
+		</action>
+		<action name="rd" class="com.bigdata.action.database.RelationalDatabase">
+			<result>/WEB-PAGE/database/relational_database.jsp</result>
+		</action>
+		<!-- 数据可视化 -->
+		<action name="sov"
+			class="com.bigdata.action.datavisualization.SoftwareOperationVisualization">
+			<result>/WEB-PAGE/datavisualization/software_operation_visualization.jsp
+			</result>
+		</action>
+		<action name="wiv"
+			class="com.bigdata.action.datavisualization.WebInteractiveVisualization">
+			<result>/WEB-PAGE/datavisualization/web_interactive_visualization.jsp
+			</result>
+		</action>
+		<!-- 数字图像处理 -->
+		<action name="dip"
+			class="com.bigdata.action.digitalimage.DigitalImageProcessing">
+			<result>/WEB-PAGE/digitalimage/digital_image_processing.jsp
+			</result>
+		</action>
+		<action name="gui" class="com.bigdata.action.digitalimage.GUI">
+			<result>/WEB-PAGE/digitalimage/gui.jsp</result>
+		</action>
+		<action name="ice"
+			class="com.bigdata.action.digitalimage.ImageCharacteristicsExtraction">
+			<result>/WEB-PAGE/digitalimage/image_characteristics_extraction.jsp
+			</result>
+		</action>
+		<action name="ipp"
+			class="com.bigdata.action.digitalimage.ImagePreProcessing">
+			<result>/WEB-PAGE/digitalimage/image_pre_processing.jsp
+			</result>
+		</action>
+		<action name="ipa"
+			class="com.bigdata.action.digitalimage.ImageProcessingAlgorithm">
+			<result>/WEB-PAGE/digitalimage/image_processing_algorithm.jsp
+			</result>
+		</action>
+		<action name="matlab" class="com.bigdata.action.digitalimage.MATLAB">
+			<result>/WEB-PAGE/digitalimage/matlab.jsp
+			</result>
+		</action>
+		<action name="pr"
+			class="com.bigdata.action.digitalimage.PatternRecognition">
+			<result>/WEB-PAGE/digitalimage/pattern_recognition.jsp
+			</result>
+		</action>
+		<!-- 数学基础 -->
+		<action name="am" class="com.bigdata.action.mathbase.AdvancedMathematics">
+			<result>/WEB-PAGE/mathbase/advanced_mathematics.jsp
+			</result>
+		</action>
+		<action name="la" class="com.bigdata.action.mathbase.LinearAlgebra">
+			<result>/WEB-PAGE/mathbase/linear_algebra.jsp
+			</result>
+		</action>
+		<action name="pt" class="com.bigdata.action.mathbase.ProbabilityTheory">
+			<result>/WEB-PAGE/mathbase/probability_theory.jsp
+			</result>
+		</action>
+		<action name="statistics" class="com.bigdata.action.mathbase.Statistics">
+			<result>/WEB-PAGE/mathbase/statistics.jsp
+			</result>
+		</action>
+		<!-- 移动应用开发 -->
+		<action name="app" class="com.bigdata.action.mobileapplication.App">
+			<result>/WEB-PAGE/mobileapplication/app.jsp
+			</result>
+		</action>
+		<!-- 虚拟化、云计算、大数据处理 -->
+		<action name="bdpf"
+			class="com.bigdata.action.virtualizationcloudbigdata.BigDataDistributedProcessingFramework">
+			<result>/WEB-PAGE/virtualizationcloudbigdata/bigdata_distributed_processing_framework.jsp
+			</result>
+		</action>
+		<action name="cmp"
+			class="com.bigdata.action.virtualizationcloudbigdata.CloudManagementPlatform">
+			<result>/WEB-PAGE/virtualizationcloudbigdata/cloud_management_platform.jsp
+			</result>
+		</action>
+		<!-- 数据仓库、数据挖掘 -->
+		<action name="dma"
+			class="com.bigdata.action.warehousemining.DataMiningAlgorithms">
+			<result>/WEB-PAGE/warehousemining/data_mining_algorithms.jsp
+			</result>
+		</action>
+		<action name="ml"
+			class="com.bigdata.action.warehousemining.MachineLearning">
+			<result>/WEB-PAGE/warehousemining/machine_learning.jsp
+			</result>
+		</action>
+		<action name="olap" class="com.bigdata.action.warehousemining.OLAP">
+			<result>/WEB-PAGE/warehousemining/olap.jsp
+			</result>
+		</action>
+		<action name="dw" class="com.bigdata.action.warehousemining.DW">
+			<result>/WEB-PAGE/warehousemining/dw.jsp
+			</result>
+		</action>
+		<!-- Web开发 -->
+		<action name="wb" class="com.bigdata.action.web.WebBackground">
+			<result>/WEB-PAGE/web/web_background.jsp
+			</result>
+		</action>
+		<action name="wf" class="com.bigdata.action.web.WebFront">
+			<result>/WEB-PAGE/web/web_front.jsp
+			</result>
+		</action>
+	</package>
+</struts>

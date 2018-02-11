@@ -1,0 +1,151 @@
+/* CSS Document */
+*{
+	margin:0px; 
+	padding:0px;
+    list-style: none;
+}
+body{background-color:#1073ad
+}
+/*----------------------------------header---------------------------------------------------*/
+.head{
+    width:100%;
+	height:auto;
+	
+
+}
+.div_logo{
+    width:85%;
+	height:90px;
+	
+	position: relative;
+    margin:0 auto;
+	
+	padding:30px 0 0;
+
+
+}
+.center{
+    width:67%;
+	height:382px;
+	background-color:#fff;
+	margin:0 auto;
+	margin-top:30px;
+	padding:20px 20px;
+}
+.img{
+    background-color:#666666;
+	width:440px;height:380px;
+	margin-right:25px;
+	float:left;
+}
+
+.div_denglu{
+    width:338px;
+	height:295px;
+	float:right;
+	border-top:3px solid #1073ad;
+	border-right:2px solid #ccc;
+	border-bottom:2px solid #CCCCCC;
+	border-left:2px solid #ccc;
+	padding:40px 30px
+}
+
+.div_denglu_1{
+    width:340px;
+	height:30px;
+	color:#787878
+}
+
+.div_denglu_2{
+    width:340px;
+	height:49px;
+	padding:10px 0;
+}
+
+.div_denglu_3{
+    width:338px;
+	height:49px;
+	padding:12px 0;
+}
+
+.div_denglu_4{
+    width:340px;
+	height:25px;
+	color:#787878;
+	
+	}
+	
+.div_denglu_4 a:link,.div_denglu_4 a:visited{
+    color:#1073ad;
+	text-decoration:none;
+}
+
+.div_denglu_4 a:hover{
+    text-decoration:underline;
+}
+
+.forget{
+     width:80px;
+	 height:15px;
+	 float:right;
+	 padding:0 0 0 60px;
+}
+
+.div_denglu_5{
+     width:340px;
+	 height:49px;
+	 padding:10px 0;
+}
+
+.div_denglu_6{
+     width:340px;
+	 height:25px;
+	 color:#787878;
+}
+
+.div_denglu_6 a:link,.div_denglu_6 a:visited{
+     color:#1073ad;
+	 text-decoration:none;
+}
+
+.div_denglu_6 a:hover{
+      text-decoration:underline;
+}
+
+.btnn{
+     background-color:#1073ad;
+	 font-weight:bold;
+	 font-size:12px;
+	 color:#FFFFFF;
+	 border-radius:3px; 
+	 box-shadow:0px 0px 5px #000; 
+	 border:none;
+}
+/*----------------------------------footer---------------------------------------------------*/
+.footer{
+	width:100%;
+	height: auto;
+	
+
+	
+}
+.footer div{
+	text-align:center;
+	padding-top:40px;
+	padding-bottom:50px;
+
+	
+}
+.footer div a:link,.footer div a:visited{
+	text-decoration:none;
+	color: #1C1C1C;
+	font-size:14px;
+}
+.footer div a:hover{
+	text-decoration: underline;
+	color: #1C1C1C;
+	font-size:14px;
+}
+.footer div p{
+padding-top:20px;
+}

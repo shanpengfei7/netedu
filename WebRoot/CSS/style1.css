@@ -1,0 +1,358 @@
+CSS Document
+ -------------------------------------------search----------------------------------------
+.container-ctn {
+	width: 910px;
+	height: auto;
+	background: #FFFFFF;
+	border-top: 3px solid #0033CC;
+	padding: 20px 20px;
+}
+
+.container-ctn_one, .container-ctn_two, .container-ctn_three,
+	.container-ctn_four, .container-ctn_five, .container-ctn_six,
+	.container-ctn_seven, .container-ctn_eight {
+	width: 849px;
+	height: auto;
+	border-bottom: 2px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	padding: 0 30px;
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+#hm_one_head {
+	float: right;
+	display: block;
+	width: 300px;
+}
+
+#hm_three_head {
+	float: right;
+	display: block;
+	width: 110px;
+	text-align: center;
+}
+
+#hm_four_head {
+	float: right;
+	display: block;
+	width: 100px;
+}
+
+#hm_five_head {
+	float: right;
+	display: block;
+	width: 100px;
+}
+
+#hm_two_head {
+	float: right;
+	display: block;
+	width: 80px;
+	text-align: center;
+}
+
+.container-ctn_one #ls {
+	margin-bottom: 20px;
+	height: auto;
+	overflow: hidden;
+}
+
+#hm_one {
+	float: left;
+	display: block;
+	width: 459px;
+}
+
+#hm_three {
+	float: right;
+	display: block;
+	width: 110px;
+	text-align: center;
+}
+
+#hm_four {
+	float: right;
+	display: block;
+	width: 100px;
+	text-align: center;
+}
+
+#hm_five {
+	float: right;
+	display: block;
+	width: 100px;
+	text-align: center;
+}
+
+#hm_two {
+	float: right;
+	display: block;
+	width: 80px;
+	text-align: center;
+}
+
+.container-content_sn {
+	width: 930px;
+	background: #FFFFFF;
+	padding: 20px 10px;
+	height: auto;
+	padding-bottom: 50px;
+}
+
+----------------------------------------------
+denglu---------------------------------------------
+.debark {
+	display: block;
+	float: right;
+	padding-right: 40px;
+}
+
+-----------------------------------------------
+member -----------------------------------------------
+	.ctn_content_sn_one {
+	width: 930px;
+	height: auto;
+}
+
+.ctn_content_sn_one h2 {
+	border-bottom: 3px solid #0033FF;
+	font-size: 22px;
+	overflow: hidden;
+}
+
+.ctn_content_sn_two h2 {
+	border-bottom: 3px solid #0033FF;
+	font-size: 22px;
+	overflow: hidden;
+}
+
+.ctn_content_sn_one ul {
+	padding-bottom: 3px;
+	padding-top: 10px;
+	margin-top: 20px;
+	padding-left: 110px;
+	padding-right: 20px;
+	font-size: 18px;
+	border-bottom: 2px solid #ccc;
+	border-right: 1px solid #ccc;
+	overflow: hidden;
+}
+
+.ctn_content_sn_one li {
+	width: 175px;
+	float: left;
+	overflow: hidden;
+}
+
+.ctn_content_sn_two ul {
+	padding: 3px 110px 10px;
+	font-size: 18px;
+	border-bottom: 2px solid #CCCCCC;
+	border-right: 1px solid #ccc;
+	overflow: hidden;
+}
+
+.ctn_content_sn_two li {
+	width: 175px;
+	float: left;
+	overflow: hidden;
+}
+
+.ctn_content_sn_two h3 {
+	padding-top: 30px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 15px;
+	overflow: hidden;
+}
+
+.ctn_content_sn_two {
+	width: 930px;
+	height: auto;
+	margin-top: 40px;
+	overflow: hidden;
+}
+
+---------------------------------------------
+-zhuce--------------------------------------------------------
+.registered #zcan {
+	width: 100px;
+	height: 30px;
+	border: none;
+	background:red;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+	display:block;
+	
+}
+
+----------------------------
+-log--------------------------------------------------------
+.footer {
+	margin-top: 75px;
+}
+
+header .header-top #g-pclock {
+	padding-right: 25px;
+	float: right;
+}
+
+---------------------------------------------------
+-add-----------------------------------------------------
+
+
+
+
+
+
+ header .banner {
+	width: 100%;
+	height: 345px;
+	margin: 0 auto;
+	background: url(../IMAGES/banner.png) center no-repeat;
+	position: relative;
+}
+
+-------------------------------------------------------
+-upload--------------------------------------------------
+body {
+	width: 100%;
+	height: auto;
+	overflow-x: hidden;
+}
+
+.img {
+	width: 800px;
+	height: 400px;
+	margin: 100px auto;
+}
+
+.left {
+	width: 400px;
+	height: 400px;
+	float: left;
+	background: #993333;
+}
+
+.right {
+	width: 260px;
+	height: 260px;
+	float: left;
+	padding: 70px 70px;
+}
+
+.right p {
+	display: block;
+	margin-bottom: 100px;
+	font-size: 36px;
+	font-weight: 500;
+	color: #5F5F5F;
+	font-family: "Î¢ÈíÑÅºÚ";
+}
+
+#a_one {
+	width: 110px;
+	height: 40px;
+	color: #FFFFFF;
+	font-size: 14px;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
+	background: #6159F7;
+	display: block;
+}
+
+#a_two {
+	width: 110px;
+	display: block;
+	height: 40px;
+	color: #fff;
+	font-size: 14px;
+	float: right;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
+	background: #669999;
+}
+
+.but {
+	margin-top: 30px;
+}
+
+.buts {
+	margin-top: 10px;
+}
+
+.buts a:link, .but a:visited {
+	text-decoration: none;
+}
+
+.buts a:hover {
+	text-decoration: none;
+}
+
+#lls {
+	width: 60px;
+	height: 40px;
+	background: #99CC66;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px #000;
+	margin-left: 70px;
+	margin-top: 5px;
+	margin-right: 20px;
+	color: #FFFFFF;
+	font-size: 20px;
+	cursor: pointer;
+	display: block;
+	float: right;
+	margin-right: 130px;
+	text-align: center;
+	line-height: 40px;
+}
+
+.but a:link, .but a:visited {
+	text-decoration: none;
+}
+
+.but a:hover {
+	text-decoration: none;
+}
+
+header .banner {
+	width: 100%;
+	height: 161px;
+	margin: 0 auto;
+	background: url(../IMAGES/banner.png) center;
+	position: relative;
+}
+.registered ul li input.button,.registered ul li a{
+background:#0099FF;
+border: none;
+padding:5px 20px;
+font-size: 16px;
+float: left;
+	color: #fff;
+	margin-right: 20px;
+	margin-left: 10px;
+	box-shadow:0px 0px 5px #000;
+}
+.registered ul li a{
+	
+	display:block;
+	
+}
+.registered ul li a:link,.registered ul li a:visited{
+	text-decoration: none;
+	color: #fff;
+	font-weight: normal;
+	
+}
+.registered ul li a:hover:{
+	text-decoration: none;
+	color: #fff;
+	font-weight: normal;
+}
+/*--------------------------------------------------------upload--------------------------------------------------*/
